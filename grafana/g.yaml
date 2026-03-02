@@ -1,0 +1,35 @@
+image:
+  repository: grafana/grafana
+  tag: 10.4.2
+  pullPolicy: IfNotPresent
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+persistence:
+  enabled: true
+  persistentVolumeClaim:
+    claimName: grafana-pvc
+  mountPath: /var/lib/grafana
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Loki
+      type: loki
+      url: http://loki-gateway.monitoring.svc.cluster.local
+      access: proxy
+      isDefault: false
+      editable: true
+
+service:
+  type: NodePort
+  port: 80
+initChownData:
+  enabled: false
