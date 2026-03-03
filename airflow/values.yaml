@@ -194,7 +194,7 @@ ingress:
   # Configs for the Ingress of the web Service (Airflow 2.x)
   web:
     # Enable web ingress resource
-    enabled: true
+    enabled: false
 
     # Annotations for the web Ingress
     annotations: {}
@@ -206,7 +206,7 @@ ingress:
     pathType: "ImplementationSpecific"
 
     # The hostname for the web Ingress (Deprecated - renamed to `ingress.web.hosts`)
-    host: "airflow.nsa2.com"
+    host: ""
 
     # The hostnames or hosts configuration for the web Ingress
     hosts: []
@@ -220,7 +220,7 @@ ingress:
     #     secretName: ""
 
     # The Ingress Class for the web Ingress (used only with Kubernetes v1.19 and above)
-    ingressClassName: "traefik"
+    ingressClassName: ""
 
     # configs for web Ingress TLS (Deprecated - renamed to `ingress.web.hosts[*].tls`)
     tls:
@@ -3484,8 +3484,6 @@ dags:
     # knownHosts: |
     #    <host1>,<ip1> <key1>
     #    <host2>,<ip2> <key2>
-    knownHosts:
-      github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIWVTRS8Ycu31r19XOZRG8LWv2qzxMvZqmTPu6S4rRgewHNfSnJZwVZG0Yo9oK9E0Tbm9V2Dz6+NHUOzVm7jNgIf5g6YDEiXPDFG2xDPG90bhvhenAk8cGmEM995rVg9CL1vvrXK8c+V+utFfq7PHSRz+bKcchTeQOTGr3s3Jlw1Q0Qcgsltg1WvDZtGFioDclurlyK355bNAfh8AKwYxgvl38doJE6wQ9WKn+KCtgu0S/jzq3u6bY+Wk3qDsU2aNWhAl+Gh+XrJVswHJndmJw0hsp0g+Bh6a9U51689iYI3woJP4HQ91JTIaZbWy1v6gSOBVhF5tGEor8Ue5tsWBM77B2Fc/TzCm+jUbvvaodXdr1XpsTAB1f6bgXRvsLNqbpQicUe2SUpjB1TU7B4D9YQ9kVQgmS/7AAlPCra7mZME2H696yFuFg4N7YwymnhxbUyNQ1fq7l1HUK7KZPHiTbfr5eOpKVP7j+b4HInFnEjAuOgom7BvCnrfr52d/9AjPwv5UUoCASeEkJ9TfOkJ8Bl9GVxtHgzLjDYnzIQKBPgmCHHGcE5jm8li5RloT4P6cEHP8vGBA+9Fq49XtiDy2Ij5E2ipA0U4E24cejClYH/ryBU4DkP2F4h7hMSDQf2W+Idqe5TiMvLBap9IpVpMlmSR5phrwEg456SlxvEyHO8Q== tohaidang123@gmail.com
 
     # interval between git sync attempts in seconds
     # high values are more likely to cause DAGs to become out of sync between different components
@@ -3560,4 +3558,3 @@ logs:
     existingClaim:
     ## the subpath of the existing PVC to use
     subPath:
-
