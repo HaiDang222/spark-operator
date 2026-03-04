@@ -3471,6 +3471,7 @@ dags:
     #     gitSshKey: <base64_encoded_data>
     # and specify the name of the secret below
     sshKeySecret: airflow-git-ssh-key-secret
+
     #
     # Or set sshKeySecret with your key
     # sshKey: |
