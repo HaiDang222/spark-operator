@@ -1380,7 +1380,7 @@ grafana:
      finalizers:
        - kubernetes.io/pvc-protection
   initChownData:
-    enabled: false
+    enabled: true
 
   serviceAccount:
     create: true

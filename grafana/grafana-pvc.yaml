@@ -4,8 +4,10 @@ metadata:
   name: grafana-pvc
 spec:
   accessModes:
-    - ReadWriteOnce
-  storageClassName: standard
+    - ReadWriteMany
+  storageClassName: ''
+  volumeMode: Filesystem
+  volumeName: grafana-pv
   resources:
     requests:
       storage: 1Gi

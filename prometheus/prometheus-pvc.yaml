@@ -4,8 +4,10 @@ metadata:
   name: prometheus-pvc
 spec:
   accessModes:
-    - ReadWriteOnce
-  storageClassName: standard
+    - ReadWriteMany
+  storageClassName: ''
+  volumeMode: Filesystem
+  volumeName: prometheus-pv-v1
   resources:
     requests:
       storage: 1Gi

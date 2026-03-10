@@ -4,8 +4,10 @@ metadata:
   name: loki-pvc
 spec:
   accessModes:
-    - ReadWriteOnce
-  storageClassName: standard
+    - ReadWriteMany
+  storageClassName: ''
+  volumeMode: Filesystem
+  volumeName: loki-pv
   resources:
     requests:
       storage: 1Gi

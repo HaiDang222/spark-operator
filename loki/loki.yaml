@@ -1,7 +1,6 @@
 loki:
   commonConfig:
     replication_factor: 1
-    path_prefix: /var/loki
   storage:
     type: 'filesystem'
     bucketNames:
@@ -73,7 +72,8 @@ chunksCache:
 
 service:
   type: NodePort
-  port: 80
+  port: 3100
+  nodePort: 30100
 
 securityContext:
   runAsUser: 472
