@@ -111,14 +111,14 @@ resources:
 # yunikornDefaults:
 #   service.placeholderImage: registry.k8s.io/pause:3.7
 #
-#yunikornDefaults: {}
-yunikornDefaults:
-  queues:
-    - name: root
-      subQueues:
-        - name: spark
-          properties:
-            capacity: 90
+yunikornDefaults: {}
+#yunikornDefaults:
+#  queues:
+#    - name: root
+#      subQueues:
+#        - name: spark
+#          properties:
+#            capacity: 90
 
 # When this flag is true, the admission controller will be installed along with the scheduler.
 # When this flag is false, the admission controller will not be installed.
