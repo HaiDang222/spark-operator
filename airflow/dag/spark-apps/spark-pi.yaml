@@ -2,7 +2,6 @@ apiVersion: sparkoperator.k8s.io/v1beta2
 kind: SparkApplication
 metadata:
   name: spark-pi
-  #namespace: default
   namespace: spark-jobs
 spec:
   type: Scala
@@ -46,3 +45,6 @@ spec:
       allowPrivilegeEscalation: false
       seccompProfile:
         type: RuntimeDefault
+  batchScheduler: yunikorn
+  batchSchedulerOptions:
+    queue: root.default

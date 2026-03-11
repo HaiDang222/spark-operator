@@ -46,3 +46,6 @@ spec:
       allowPrivilegeEscalation: false
       seccompProfile:
         type: RuntimeDefault
+  batchScheduler: yunikorn
+  batchSchedulerOptions:
+    queue: root.default
