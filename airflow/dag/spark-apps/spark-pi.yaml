@@ -47,4 +47,4 @@ spec:
         type: RuntimeDefault
   batchScheduler: yunikorn
   batchSchedulerOptions:
-    queue: root.default
+    queue: root.spark
