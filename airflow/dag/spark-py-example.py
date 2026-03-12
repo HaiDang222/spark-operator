@@ -30,9 +30,17 @@ with DAG(
 ) as dag:
     spark_pi_task = SparkKubernetesOperator(
         task_id='spark_example',
-        namespace='airflow',
+        namespace='spark-jobs',
         application_file='spark-apps/spark-pi.yaml',
         kubernetes_conn_id='kubernetes_default',
+        batch_scheduler="yunikorn",
+        batch_scheduler_options={"queue": "root.spark-jobs"},  # YuniKorn queue
+        conf={
+            "spark.kubernetes.namespace": "spark-jobs",
+            "spark.kubernetes.driver.serviceAccountName": "spark-operator-spark",
+            "spark.kubernetes.executor.serviceAccountName": "spark-operator-spark",
+            "spark.kubernetes.driver.label.scheduler.alpha.kubernetes.io/queue": "root.spark-jobs",
+            "spark.kubernetes.executor.label.scheduler.alpha.kubernetes.io/queue": "root.spark-jobs"}
 
     )
 
