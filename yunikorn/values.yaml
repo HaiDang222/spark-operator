@@ -63,7 +63,7 @@ admissionController:
   affinity: {}
   service:
     type: ClusterIP
-  processNamespaces: null # deprecated; use admissionController.filtering.processNamespaces in yunikornDefaults
+  processNamespaces: '^spark-' # deprecated; use admissionController.filtering.processNamespaces in yunikornDefaults
   bypassNamespaces: null  # deprecated; use admissionController.filtering.bypassNamespaces in yunikornDefaults
   labelNamespaces: null   # deprecated; use admissionController.filtering.labelNamespaces in yunikornDefaults
   noLabelNamespaces: null # deprecated; use admissionController.filtering.noLabelNamespaces in yunikornDefaults
@@ -117,9 +117,9 @@ yunikornDefaults:
     root:
       subQueues:
         default:
-          capacity: 50
+          capacity: 80
         analytics:
-          capacity: 50
+          capacity: 20
 
 # When this flag is true, the admission controller will be installed along with the scheduler.
 # When this flag is false, the admission controller will not be installed.

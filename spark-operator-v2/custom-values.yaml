@@ -394,6 +394,7 @@ spark:
     - spark-jobs
     - airflow
     - default
+    - yunikorn
 
   serviceAccount:
     # -- Specifies whether to create a service account for spark applications.
