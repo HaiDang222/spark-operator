@@ -105,14 +105,14 @@ controller:
   batchScheduler:
     # -- Specifies whether to enable batch scheduler for spark jobs scheduling.
     # If enabled, users can specify batch scheduler name in spark application.
-    enable: false
+    enable: true
     # -- Specifies a list of kube-scheduler names for scheduling Spark pods.
     kubeSchedulerNames: []
     # - default-scheduler
     # -- Default batch scheduler to be used if not specified by the user.
     # If specified, this value must be either "volcano" or "yunikorn". Specifying any other
     # value will cause the controller to error on startup.
-    default: ""
+    default: yunikorn
 
   serviceAccount:
     # -- Specifies whether to create a service account for the controller.
@@ -458,4 +458,3 @@ certManager:
   # See [cert-manager.io/v1.Certificate](https://cert-manager.io/docs/reference/api-docs/#cert-manager.io/v1.Certificate).
   # @default -- 1/3 of issued certificate’s lifetime.
   renewBefore: ""
-
