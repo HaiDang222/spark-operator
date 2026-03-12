@@ -64,9 +64,9 @@ admissionController:
   service:
     type: ClusterIP
   processNamespaces: '^spark-' # deprecated; use admissionController.filtering.processNamespaces in yunikornDefaults
-  bypassNamespaces: null  # deprecated; use admissionController.filtering.bypassNamespaces in yunikornDefaults
-  labelNamespaces: null   # deprecated; use admissionController.filtering.labelNamespaces in yunikornDefaults
-  noLabelNamespaces: null # deprecated; use admissionController.filtering.noLabelNamespaces in yunikornDefaults
+#  bypassNamespaces: null  # deprecated; use admissionController.filtering.bypassNamespaces in yunikornDefaults
+#  labelNamespaces: null   # deprecated; use admissionController.filtering.labelNamespaces in yunikornDefaults
+#  noLabelNamespaces: null # deprecated; use admissionController.filtering.noLabelNamespaces in yunikornDefaults
   podLabels: {}
 
 web:
@@ -111,15 +111,15 @@ resources:
 # yunikornDefaults:
 #   service.placeholderImage: registry.k8s.io/pause:3.7
 #
-#yunikornDefaults: {}
-yunikornDefaults:
-  queues:
-    root:
-      subQueues:
-        default:
-          capacity: 80
-        analytics:
-          capacity: 20
+yunikornDefaults: {}
+#yunikornDefaults:
+#  queues:
+#    root:
+#      subQueues:
+#        default:
+#          capacity: 80
+#        analytics:
+#          capacity: 20
 
 # When this flag is true, the admission controller will be installed along with the scheduler.
 # When this flag is false, the admission controller will not be installed.
