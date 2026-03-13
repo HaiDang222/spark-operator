@@ -45,6 +45,6 @@ spec:
       allowPrivilegeEscalation: false
       seccompProfile:
         type: RuntimeDefault
-#  batchScheduler: yunikorn
-#  batchSchedulerOptions:
-#    queue: root
+  batchScheduler: yunikorn
+  batchSchedulerOptions:
+    queue: root.spark-jobs
