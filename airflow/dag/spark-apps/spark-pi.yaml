@@ -17,8 +17,8 @@ spec:
     labels:
       version: 4.0.0
       queue: "root.spark-jobs"
-    cores: 0.5
-    memory: 256m
+    cores: 1
+    memory: 128m
     serviceAccount: spark-operator-spark
     securityContext:
       capabilities:
@@ -35,8 +35,8 @@ spec:
       version: 4.0.0
       queue: "root.spark-jobs"
     instances: 1
-    cores: 0.5
-    memory: 256m
+    cores: 1
+    memory: 128m
     securityContext:
       capabilities:
         drop:
