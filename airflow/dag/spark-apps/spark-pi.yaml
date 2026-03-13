@@ -46,5 +46,5 @@ spec:
       seccompProfile:
         type: RuntimeDefault
   batchScheduler: yunikorn
-  batchSchedulerOptions:
-    queue: root
+#  batchSchedulerOptions:
+#    queue: root
