@@ -17,8 +17,8 @@ spec:
     labels:
       version: 4.0.0
       queue: "root.spark-jobs"
-    cores: 1
-    memory: 512m
+    cores: 0.5
+    memory: 256m
     serviceAccount: spark-operator-spark
     securityContext:
       capabilities:
@@ -35,8 +35,8 @@ spec:
       version: 4.0.0
       queue: "root.spark-jobs"
     instances: 1
-    cores: 1
-    memory: 512m
+    cores: 0.5
+    memory: 256m
     securityContext:
       capabilities:
         drop:
@@ -49,4 +49,4 @@ spec:
         type: RuntimeDefault
   batchScheduler: yunikorn
   batchSchedulerOptions:
-    queue: spark-jobs
+    queue: root.spark-jobs
