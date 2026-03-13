@@ -392,9 +392,9 @@ spark:
   # Make sure the namespaces have already existed.
   jobNamespaces:
     - spark-jobs
-    - airflow
+#    - airflow
     - default
-    - yunikorn
+#    - yunikorn
 
   serviceAccount:
     # -- Specifies whether to create a service account for spark applications.
