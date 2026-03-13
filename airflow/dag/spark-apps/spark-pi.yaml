@@ -49,4 +49,4 @@ spec:
         type: RuntimeDefault
   batchScheduler: yunikorn
   batchSchedulerOptions:
-    queue: root.spark-jobs
+    queue: spark-jobs
