@@ -1,10 +1,10 @@
-airflowVersion: "2.10.5"
+airflowVersion: "3.1.7"
 
 # Images
 images:
   airflow:
     repository: apache/airflow
-    tag: 2.10.5-python3.9
+    tag: 3.1.7
 executor: "KubernetesExecutor"
 
 ingress:
@@ -71,8 +71,11 @@ statsd:
 # Configuration for the redis provisioned by the chart
 redis:
   enabled: false
+
 postgresql:
   enabled: true
+  persistence:
+    size: 20Gi
   image:
     repository: bitnamilegacy/postgresql
     tag: "16.1.0-debian-11-r15"
@@ -80,7 +83,7 @@ postgresql:
     enablePostgresUser: true
     username: "admin"
     existingSecret: airflow-postgresql-credentials
-    superuser: true
+#    superuser: true
 
 data:
   metadataConnection:
@@ -129,7 +132,7 @@ logs:
     # If using a custom storageClass, pass name here
     storageClassName: standard
     ## the name of an existing PVC to use
-    existingClaim: logs-airflow-triggerer-0
+#    existingClaim: logs-airflow-triggerer-0
     ## the subpath of the existing PVC to use
 #    subPath: airflow-logs
 
