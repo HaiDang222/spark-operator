@@ -3556,7 +3556,7 @@ logs:
     # If using a custom storageClass, pass name here
     storageClassName: standard
     ## the name of an existing PVC to use
-    existingClaim: logs-airflow-triggerer-0
+#    existingClaim: logs-airflow-triggerer-0
     ## the subpath of the existing PVC to use
     subPath: airflow-logs
 airflow:
