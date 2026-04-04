@@ -2,7 +2,8 @@ apiVersion: sparkoperator.k8s.io/v1beta2
 kind: SparkApplication
 metadata:
   name: spark-pi
-  namespace: spark-jobs
+  # <1> Make sure the namespace matches the one used in the Airflow DAG
+  namespace: airflow
 spec:
   type: Scala
   mode: cluster
@@ -11,18 +12,18 @@ spec:
   mainClass: org.apache.spark.examples.SparkPi
   mainApplicationFile: local:///opt/spark/examples/jars/spark-examples.jar
   arguments:
-  - "5000"
+    - "5000"
   sparkVersion: 4.0.0
   driver:
     labels:
       version: 4.0.0
     cores: 1
-    memory: 720m
+    memory: 512m
     serviceAccount: spark-operator-spark
     securityContext:
       capabilities:
         drop:
-        - ALL
+          - ALL
       runAsGroup: 185
       runAsUser: 185
       runAsNonRoot: true
@@ -34,17 +35,14 @@ spec:
       version: 4.0.0
     instances: 1
     cores: 1
-    memory: 720m
+    memory: 512m
     securityContext:
       capabilities:
         drop:
-        - ALL
+          - ALL
       runAsGroup: 185
       runAsUser: 185
       runAsNonRoot: true
       allowPrivilegeEscalation: false
       seccompProfile:
         type: RuntimeDefault
-  batchScheduler: yunikorn
-  batchSchedulerOptions:
-    queue: root.spark-jobs
