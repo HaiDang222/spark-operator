@@ -3,7 +3,7 @@ kind: SparkApplication
 metadata:
   name: spark-pi
   # <1> Make sure the namespace matches the one used in the Airflow DAG
-  namespace: airflow
+  namespace: spark-jobs
 spec:
   type: Scala
   mode: cluster

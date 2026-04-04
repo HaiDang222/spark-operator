@@ -3558,11 +3558,11 @@ logs:
     ## the name of an existing PVC to use
 #    existingClaim: logs-airflow-triggerer-0
     ## the subpath of the existing PVC to use
-    subPath: airflow-logs
+#    subPath: airflow-logs
 airflow:
   config:
     # Disable remote logging (write logs locally)
     AIRFLOW__LOGGING__REMOTE_LOGGING: "False"
 
     # Base folder for task logs (mount this path to your PVC)
-    AIRFLOW__CORE__BASE_LOG_FOLDER: airflow-logs
+#    AIRFLOW__CORE__BASE_LOG_FOLDER: airflow-logs
